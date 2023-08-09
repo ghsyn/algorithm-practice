@@ -1,7 +1,8 @@
 from heapq import heappush, heappop
+import sys
 
-n = int(input())
-list = [list(map(int, input().split())) for _ in range(n)]
+n = int(sys.stdin.readline())
+list = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 list.sort()
 
 end = [list[0][1]]
