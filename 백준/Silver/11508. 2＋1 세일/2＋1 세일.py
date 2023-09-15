@@ -5,11 +5,11 @@ for _ in range(n):
     item = int(input())
     prices.append(item)
     
-prices.sort()
+prices.sort(reverse=True)
 result = 0
 
 for i in range(n):
-    if (i % 3 != n % 3):
+    if (i % 3 != 2):
         result += prices[i]
         
 print(result)
