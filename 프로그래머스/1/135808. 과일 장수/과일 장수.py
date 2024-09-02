@@ -5,8 +5,8 @@ def solution(k, m, score):
     
     while(idx + m <= len(score)):
         min = score[idx + m - 1]
-        answer += min * m
+        answer += min
         # score = score[m:]
         idx += m
             
-    return answer
+    return answer * m
