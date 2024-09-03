@@ -1,2 +1,8 @@
 def solution(a, b, n):
-    return (n - b) // (a - b) * b
+    answer = 0
+    
+    while n >= a:
+        answer += (n//a)
+        n += (b-a) * (n//a)
+    
+    return answer * b
