@@ -1,8 +1,7 @@
 from collections import deque
 
 def solution(maps):
-    n = len(maps)
-    m = len(maps[0])
+    (n, m) = (len(maps), len(maps[0]))
     
     dx = [-1,1,0,0]
     dy = [0,0,-1,1]
