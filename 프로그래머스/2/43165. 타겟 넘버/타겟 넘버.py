@@ -3,6 +3,7 @@ def solution(numbers, target):
         if idx == len(numbers):
             return 1 if current_sum == target else 0
         else:
-            return dfs(idx + 1, current_sum + numbers[idx]) + dfs(idx + 1, current_sum - numbers[idx])
+            answer = dfs(idx + 1, current_sum + numbers[idx]) + dfs(idx + 1, current_sum - numbers[idx])
+            return answer
     
     return dfs(0, 0)
