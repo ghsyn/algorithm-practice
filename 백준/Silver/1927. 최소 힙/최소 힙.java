@@ -1,26 +1,30 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.PriorityQueue;
-import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class  Main {
+    public static void main(String[] args) throws IOException {
     
-        Scanner sc = new Scanner(System.in);
-        
-        int m = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int m = Integer.parseInt(br.readLine());
 
         PriorityQueue<Integer> queue = new PriorityQueue<>();
 
-
         for (int i = 0; i < m; i++) {
-            int num = sc.nextInt();
+            int num = Integer.parseInt(br.readLine());
 
             if (num == 0) {
                 if (queue.isEmpty()) {
-                    System.out.println(0);
+                    bw.write("0\n");
+                    bw.flush();
                 }
                 else{
-                    System.out.println(queue.peek());
-                    queue.poll();        
+                    bw.write(queue.poll()+"\n");        
                 }
             }
             else{
@@ -28,7 +32,8 @@ public class Main {
             }
         }
 
-    
+        bw.flush();
+        bw.close();
 
     }
     
