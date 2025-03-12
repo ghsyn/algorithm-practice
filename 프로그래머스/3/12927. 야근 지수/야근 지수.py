@@ -1,4 +1,3 @@
-import math
 import heapq
 
 def solution(n, works):
@@ -10,6 +9,6 @@ def solution(n, works):
         heapq.heappush(heap, max_val + 1)
         n -= 1
         
-    answer = sum(math.pow(i, 2) for i in heap)
+    answer = sum(i**2 for i in heap)
         
     return answer
