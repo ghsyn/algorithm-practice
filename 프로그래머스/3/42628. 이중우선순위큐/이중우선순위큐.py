@@ -7,9 +7,11 @@ def solution(operations):
     def pop_min():
         node = heapq.heappop(min_heap)
         max_heap.remove(-node)
+        heapq.heapify(max_heap)
     def pop_max():
         node = heapq.heappop(max_heap)
         min_heap.remove(-node)
+        heapq.heapify(min_heap)
     
     for command in operations:
         com, val = command.split()
