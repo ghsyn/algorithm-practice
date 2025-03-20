@@ -9,9 +9,7 @@ def solution(scoville, K):
         if len(scoville) < 2:
             return -1
         
-        first_val = heapq.heappop(scoville)
-        second_val = heapq.heappop(scoville)
-        heapq.heappush(scoville, first_val + second_val * 2)
+        heapq.heappush(scoville, heapq.heappop(scoville) + heapq.heappop(scoville) * 2)
         answer += 1
     
     return answer
