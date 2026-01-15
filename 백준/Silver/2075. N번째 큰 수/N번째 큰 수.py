@@ -1,16 +1,17 @@
-import heapq
+import sys, heapq
+input = sys.stdin.readline
 
-n = []
+n = int(input())
+heap = []
 
-for _ in range(int(input())):
-    array = list(map(int, input().split()))
-    if not n:
-        for i in array:
-            heapq.heappush(n, i)
+for _ in range(n):
+    _readline = map(int, input().split())
+    
+    if not heap:
+        heap = list(_readline)
     else:
-        for i in array:
-            if n[0] < i:
-                heapq.heappush(n, i)
-                heapq.heappop(n)
-
-print(n[0])
+        for i in _readline:
+            if heap[0] < i:
+                heapq.heapreplace(heap, i)
+                
+print(heap[0])
